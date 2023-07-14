@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Final Project</string>
+    <string name="hint_search_here">Cari disini</string>
+    <string name="label_flood">Banjir</string>
 </resources>

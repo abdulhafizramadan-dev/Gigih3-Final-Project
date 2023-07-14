@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_disaster"
+            style="@style/Widget.Gigih.TextInputLayout.Outlined.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_search_here"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_disaster">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_disaster"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:clipToPadding="false"
+                android:isScrollContainer="true"
+                android:paddingHorizontal="16dp"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Gigih.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="16dp"
+                    android:text="@string/label_flood"
+                    app:checkedIconEnabled="false"
+                    app:closeIconEnabled="false"
+                    app:chipIcon="@drawable/ic_add_black" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Gigih.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/label_flood"
+                    app:checkedIconEnabled="false"
+                    app:closeIconEnabled="false"
+                    app:chipIcon="@drawable/ic_add_black" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Gigih.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/label_flood"
+                    app:closeIconEnabled="false"
+                    app:checkedIconEnabled="false"
+                    app:chipIcon="@drawable/ic_add_black" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Gigih.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/label_flood"
+                    app:closeIconEnabled="false"
+                    app:checkedIconEnabled="false"
+                    app:chipIcon="@drawable/ic_add_black" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Gigih.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/label_flood"
+                    app:closeIconEnabled="false"
+                    app:checkedIconEnabled="false"
+                    app:chipIcon="@drawable/ic_add_black" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

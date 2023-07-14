@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Gigih.TextInputLayout.Outlined.Dense" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_height">40dp</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Gigih.SmallComponent</item>
+    </style>
+
+    <style name="Widget.Gigih.Chip.Filter" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="itemShapeAppearance">@style/ShapeAppearance.Gigih.SmallComponent</item>
+        <item name="checkedIconEnabled">false</item>
+        <item name="closeIconEnabled">false</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="checkedIconTint">@color/chip_content_color</item>
+        <item name="android:textColor">@color/chip_content_color</item>
+    </style>
+
+    <style name="ShapeAppearance.Gigih.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">64dp</item>
+    </style>
+
+</resources>
