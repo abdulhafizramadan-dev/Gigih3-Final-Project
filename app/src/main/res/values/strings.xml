@@ -2,4 +2,8 @@
     <string name="app_name">Final Project</string>
     <string name="hint_search_here">Cari disini</string>
     <string name="label_flood">Banjir</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_latest_disaster_information">Informasi Bencana Terkini</string>
+    <string name="message_hide_bottom_sheet">Hide bottom sheet</string>
 </resources>
