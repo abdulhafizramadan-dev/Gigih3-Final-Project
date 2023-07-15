@@ -10,7 +10,7 @@
     android:paddingHorizontal="16dp"
     android:animateLayoutChanges="true"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="100dp"
+    app:behavior_peekHeight="180dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <View

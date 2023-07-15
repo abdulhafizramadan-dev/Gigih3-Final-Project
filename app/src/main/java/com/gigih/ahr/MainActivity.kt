@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import com.gigih.ahr.databinding.ActivityMainBinding
 import com.gigih.ahr.util.gone
 import com.gigih.ahr.util.setMargins
@@ -24,11 +27,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         bottomBehavior = BottomSheetBehavior.from(binding.bsLatestDisaster.root)
 
+        setupWindowInset()
         initUi()
         initAction()
         bottomSheetConfiguration()
@@ -39,7 +44,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @Suppress("DEPRECATION")
+    private fun setupWindowInset() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+            binding.homeAppbar.setMargins(top = insets.systemWindowInsetTop)
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+
     private fun initUi() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         bottomBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
     }
 
@@ -48,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             bottomBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }
+
 
     private fun bottomSheetConfiguration() {
         bottomBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
