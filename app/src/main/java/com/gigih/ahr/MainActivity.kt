@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomBehavior: BottomSheetBehavior<ConstraintLayout>
+    private var topWindowInset = 0
+
+    private val dimen32dp get() =  resources.getDimension(R.dimen.dimen_32dp)
+    private val dimen16dp get() =  resources.getDimension(R.dimen.dimen_16dp)
+    private val dimen8dp get() =  resources.getDimension(R.dimen.dimen_8dp)
 
     private val bottomSheet get() =  binding.bsLatestDisaster
 
@@ -47,7 +52,8 @@ class MainActivity : AppCompatActivity() {
     @Suppress("DEPRECATION")
     private fun setupWindowInset() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
-            binding.homeAppbar.setMargins(top = insets.systemWindowInsetTop)
+            topWindowInset = insets.systemWindowInsetTop
+            binding.homeAppbar.setMargins(top = topWindowInset)
             WindowInsetsCompat.CONSUMED
         }
     }
@@ -78,14 +84,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun toggleBottomSheetLatestDisaster(state: Boolean) {
         if (state) {
-            val dimen32dp = resources.getDimension(R.dimen.dimen_32dp)
-            bottomSheet.tvLabelLatestDisaster.setMargins(start = dimen32dp.toInt())
-            bottomSheet.btnHideBs.visible()
-            bottomSheet.btnHideBs.animate().alpha(1f)
+            with(bottomSheet) {
+                tvLabelLatestDisaster.setMargins(start = (dimen32dp + dimen16dp).toInt())
+                btnHideBs.setMargins(start = dimen16dp.toInt(), top = dimen16dp.toInt())
+                topIndicator.setMargins(top = dimen8dp.toInt())
+                btnHideBs.visible()
+                divider.visible()
+                btnHideBs.animate().alpha(1f)
+            }
         } else {
-            bottomSheet.tvLabelLatestDisaster.setMargins(start = 0)
-            bottomSheet.btnHideBs.gone()
-            bottomSheet.btnHideBs.animate().alpha(0f)
+            with(bottomSheet) {
+                tvLabelLatestDisaster.setMargins(start = dimen16dp.toInt(), top = dimen16dp.toInt())
+                topIndicator.setMargins(top = 0)
+                btnHideBs.gone()
+                divider.gone()
+                btnHideBs.animate().alpha(0f)
+            }
         }
     }
 
