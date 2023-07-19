@@ -3,6 +3,9 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark_grey">#303030</color>
+
+    <color name="backgroundColor">@color/white</color>
 
     <color name="seed">#008511</color>
     <color name="md_theme_light_primary">#006E0C</color>
